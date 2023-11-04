@@ -1,4 +1,5 @@
-(ns advent-of-code.day18)
+(ns advent-of-code.day18
+  (:require [advent-of-code.utils :as u]))
 
 (defn part-1
   "Day 18 Part 1"
