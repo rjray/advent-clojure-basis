@@ -4,9 +4,9 @@
 (defn part-1
   "Day 03 Part 1"
   [input]
-  input)
+  "Implement this part")
 
 (defn part-2
   "Day 03 Part 2"
   [input]
-  input)
+  "Implement this part")
