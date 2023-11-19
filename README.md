@@ -79,6 +79,12 @@ Other modules can be added to the `require` form as needed. The template
 `org.clojure/math.combinatorics` packages, as I find myself using those pretty
 often.
 
+The `input` parameter that each puzzle-part receives is the whole of the text
+file that is the puzzle input. It is read from the file in `resources` that
+gets saved by the user. It is not split into lines or stripped of newline
+characters, etc. That is left to the puzzle code to do as needed. The `utils`
+file has a variety of functions for parsing/managing the input.
+
 ## Checklist
 
 Once this template is used to create a new repo, do the following:
