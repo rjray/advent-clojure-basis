@@ -17,4 +17,4 @@
       (nil? sub)      (throw (Exception. "Matching fn not found."))
       :else           (let [[r t] (u/time-it (sub (u/read-input input)))]
                         (println r)
-                        (println (format "\nTime: %.4fs" t))))))
+                        (println (format "\nTime: %.4fms" t))))))

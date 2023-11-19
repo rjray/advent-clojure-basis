@@ -30,7 +30,7 @@
   (map parse-long (re-seq #"[-+]?\d+" line)))
 
 ;; Like the core time macro, but rather than printing the elapsed time it
-;; returns a list of (result, time).
+;; returns a list of (result, time). Returned value is in milliseconds.
 (defmacro time-it [expr]
   `(let [start# (. System (nanoTime))
          ret#   ~expr
