@@ -90,6 +90,7 @@ file has a variety of functions for parsing/managing the input.
 Once this template is used to create a new repo, do the following:
 
 1. Edit `project.clj` to change the `:url` and `:description` properties
-2. Edit this file to change `20XX` to the current year
-3. Delete everything from second level-1 header ("Advent of Code Clojure Basis")
+2. Edit `LICENSE` to change `20XX` to the current year
+3. Edit this file to change `20XX` to the current year
+4. Delete everything from second level-1 header ("Advent of Code Clojure Basis")
    to the end
