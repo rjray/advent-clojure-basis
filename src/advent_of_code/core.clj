@@ -14,15 +14,18 @@
         day   (Integer/parseInt (if bis (second args) (first args)))
         part  (Integer/parseInt (if bis (nth args 2) (second args)))
         input (format "day%02d.txt" day)
-        sub   (requiring-resolve
-               (symbol (format "advent-of-code.day%02d%s/part-%d"
-                               day (if bis "bis" "") part)))]
+        sub   (try (requiring-resolve
+                    (symbol (format "advent-of-code.day%02d%s/part-%d"
+                                    day (if bis "bis" "") part)))
+                   (catch Exception _
+                     (format "No%s fn found for day %d part %d."
+                             (if bis " bis" "") day part)))]
     (cond
       (or (< day 1)
-          (> day 25)) (throw (AssertionError. "Day out of range."))
+          (> day 25)) (.println *err* "Day out of range.")
       (or (< part 1)
-          (> part 2)) (throw (AssertionError. "Part out of range."))
-      (nil? sub)      (throw (Exception. "Matching fn not found."))
+          (> part 2)) (.println *err* "Part out of range.")
+      (string? sub)   (.println *err* sub)
       :else           (let [[r t] (u/time-it (sub (u/read-input input)))]
                         (println r)
                         (println (format "\nTime: %.4fms" t))))))
