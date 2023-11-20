@@ -9,4 +9,4 @@
 (defn part-2
   "Day 25 Part 2"
   [input]
-  "Implement this part")
+  "Congrats! You should have all 50 stars by now!")
