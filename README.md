@@ -8,8 +8,9 @@ and contains both puzzle solutions for that day. These are the
 publically-facing functions `part-1` and `part-2`. These files are the code
 *exactly as I used it to solve and submit the answers*. If I revisit any of the
 days and try to clean up or optimize the solutions, that work will be in a
-separate file that will be named `dayNNbis.clj`. (Except that I may go back and
-comment code after the fact, when I'm not racing the clock.)
+separate file that will be named `dayNNbis.clj`
+(["bis"](https://www.merriam-webster.com/dictionary/bis)). I may go back and
+comment code after the fact, when I'm not racing the clock.
 
 The `resources` directory contains the input data for each day. These files are
 named for the day (`dayNN.txt`).
@@ -44,14 +45,19 @@ Uses [lein](https://github.com/technomancy/leiningen).
 
 ## Usage
 
-There are 25 namespaces in `src/advent_of_code` and 25 blank input files in
-`resources`. There are a number of utility functions in the `utils` namespace,
-and a launcher function in `core`. The recommended process is:
+There are 25 namespaces in `src/advent_of_code`, a number of utility functions
+in the `utils` namespace, and a launcher function in `core`. The recommended
+process is:
 
-1. Save the puzzle input into the matching file in `resources`
+1. Save the puzzle input into `resources` as `dayNN.txt`
 1. Code the solution in `src/advent_of_code/dayNN.clj`
 1. Test in the REPL (preferably using [CIDER](https://cider.mx/) in Emacs)
 1. When ready, run `lein run <day> <part>` to run with the puzzle input
+
+Previously, I had 25 zero-length files in `resources` with the names already
+set. The intention was to have them there for easy overwriting when saving the
+data from the web browser. But I don't want to save AoC data in my public
+repos, so I have this mechanism set up.
 
 ## Namespace Templates
 
@@ -92,7 +98,5 @@ Once this template is used to create a new repo, do the following:
 1. Edit `project.clj` to change the `:url` and `:description` properties
 2. Edit `LICENSE` to change `20XX` to the current year
 3. Edit this file to change `20XX` to the current year
-4. Edit `.gitignore` and add `resources` to it (so that the input data from the
-   AoC website does not get committed)
-5. Delete everything from second level-1 header ("Advent of Code Clojure Basis")
+4. Delete everything from second level-1 header ("Advent of Code Clojure Basis")
    to the end
