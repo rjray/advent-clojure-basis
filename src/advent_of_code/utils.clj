@@ -5,7 +5,7 @@
 (defn read-input
   "Read in the content of the given day-file and return as a blob"
   [day]
-  (slurp (io/resource day)))
+  (slurp (if (str/starts-with? day "/") day (io/resource day))))
 
 (defn to-blocks
   "Turn a blob (probably from `slurp`) into a seq of blocks"
@@ -78,3 +78,19 @@
       (= 1 x)           factors
       (zero? (mod x p)) (recur (/ x p) primes (conj factors p))
       :else             (recur x ps factors))))
+
+;; https://stackoverflow.com/questions/10347315/matrix-transposition-in-clojure
+(defn transpose [m]
+  (apply mapv vector m))
+
+;; Taken from https://github.com/narimiran/AdventOfCode2023/blob/main/clojure/aoc.clj
+(defn gcd
+  ([] 1)
+  ([x] x)
+  ([a b] (if (zero? b) a
+             (recur b (mod a b)))))
+
+(defn lcm
+  ([] 1)
+  ([x] x)
+  ([a b] (/ (* a b) (gcd a b))))

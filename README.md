@@ -12,9 +12,6 @@ separate file that will be named `dayNNbis.clj`
 (["bis"](https://www.merriam-webster.com/dictionary/bis)). I may go back and
 comment code after the fact, when I'm not racing the clock.
 
-The `resources` directory contains the input data for each day. These files are
-named for the day (`dayNN.txt`).
-
 ## Stats
 
 Number of answers correct on first submission: -/- (--%)
@@ -71,19 +68,23 @@ are essentially identical other than the day-number in the `ns` declaration:
 (defn part-1
   "Day 01 Part 1"
   [input]
-  "Implement part 1")
+  (->> input))
 
 (defn part-2
   "Day 01 Part 2"
   [input]
-  "Implement part 2")
+  (->> input))
 ```
 
 The `advent-of-code.utils` module is `require`'d and bound to the prefix `u/`.
 Other modules can be added to the `require` form as needed. The template
-`project.clj` provided here includes the `org.clojure/math.numeric-tower` and
-`org.clojure/math.combinatorics` packages, as I find myself using those pretty
-often.
+`project.clj` provided here includes several third-party Clojure packages that
+I find I use fairly often:
+
+* `org.clojure/math.numeric-tower`
+* `org.clojure/math.combinatorics`
+* `org.clojure/core.match`
+* `org.clojure/data.priority-map`
 
 The `input` parameter that each puzzle-part receives is the whole of the text
 file that is the puzzle input. It is read from the file in `resources` that
