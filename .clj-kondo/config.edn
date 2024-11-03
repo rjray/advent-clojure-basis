@@ -1,0 +1,4 @@
+{:linters {:clojure-lsp/unused-public-var {:level :warning
+                                           :exclude #{advent-of-code.utils
+                                                      part-1 part-2}
+                                           :ignore-test-references? true}}}

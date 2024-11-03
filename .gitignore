@@ -11,5 +11,5 @@ pom.xml.asc
 .hgignore
 .hg/
 .tool-versions
-.clj-kondo
+/.clj-kondo/.cache
 .lsp
